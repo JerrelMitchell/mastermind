@@ -4,6 +4,7 @@ class Game
 
   def initialize
     @colors = colors
+    @guesses = []
   end
 
   def start
@@ -27,5 +28,10 @@ class Game
 
   def quit
     'Well, all right then. Maybe we can play again another time.'
+  end
+
+  def record_guess(guess)
+    @guesses << Guess.new(guess, current_card)
+    guess
   end
 end

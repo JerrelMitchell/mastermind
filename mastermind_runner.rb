@@ -1,6 +1,8 @@
 require './lib/game'
+require './lib/guess'
 
 game = Game.new
+guess = Guess.new
 
 puts game.start
 input = gets.chomp.downcase
@@ -10,13 +12,13 @@ if input.include?('p' || 'play')
   user_guess = gets.chomp.downcase
   if user_guess.length < 4
     puts 'Your guess did not include enough inputs. Try guessing again.'
-  elsif user_guess.length > 4
+  elsif guess.user_guess.length > 4
     puts 'Your guess included too many inputs. Try guessing again.'
   else
-    puts "#{user_guess} has #{num_of_true_guesses} of the correct elements."\
+    puts "#{guess.user_guess} has #{guess.num_of_true_guesses} correct."\
     "#{number_in_position} in the correct positions."\
-    "You've taken #{guess_count} guess(es)."\
-    "You have #{remaining_guesses} remaining."
+    "You've made #{guess.guess_count} guess(es)."\
+    "You have #{guess.remaining_guesses} remaining."
   end
 elsif input.include?('i' || 'instructions')
   puts game.instructions.squeeze(' ').delete("\n")
