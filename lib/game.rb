@@ -1,9 +1,9 @@
 #
 class Game
-  attr_reader :guesses
+  attr_reader :colors
 
   def initialize
-    @guesses = 0
+    @colors = colors
   end
 
   def start
