@@ -13,4 +13,8 @@ class GameTest < Minitest::Test
   def test_it_exists
     assert_instance_of Game, @game
   end
+
+  def test_it_can_take_in_colors_as_argument
+    assert @game, 'R G B G'
+  end
 end
