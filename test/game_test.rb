@@ -14,10 +14,6 @@ class GameTest < Minitest::Test
     assert_instance_of Game, @game
   end
 
-  def test_it_initializes_with_zero_guesses
-    assert_equal 0, @game.guesses
-  end
-
   def test_it_can_ask_user_for_input_at_start
     result = 'Would you like to (p)lay a new game,
               read the (i)nstructions, or (q)uit?'
