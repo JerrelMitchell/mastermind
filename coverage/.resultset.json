@@ -1,0 +1,15 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/kelveaux/turing/1module/projects/mastermind/lib/game.rb": [
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1519117435
+  }
+}
