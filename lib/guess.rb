@@ -1,14 +1,19 @@
 class Guess
-  attr_reader :guesses
+  attr_reader :guesses, :guesses_available
 
   def initialize(*user_input)
     @user_input = user_input
     @guesses_available = 10
   end
 
+  def record_guess(guess)
+    @guesses << Guess.new(guess, current_card)
+    guess
+  end
+
   def available_guesses_reduce
-    return @guesses_available -= 1 unless user_input.length != 4
-    'Please only input 4 letters per guess.'
+    return @guesses_available -= 1 if @user_input.length == 4
+    @guesses_available
   end
 
   def num_of_true_guesses

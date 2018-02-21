@@ -9,14 +9,15 @@ class GuessTest < Minitest::Test
   end
 
   def test_it_exists
-    assert Guess, @guess
+    assert_instance_of Guess, @guess
   end
 
   def test_it_starts_with_ten_guesses
-    assert_equal 10, @guess.guesses
+    assert_equal 10, @guess.guesses_available
   end
 
   def test_guesses_are_reduced_each_time_user_makes_a_guess
-    assert_equal 9, @guess.guesses
+    @guess.available_guesses_reduce
+    assert_equal 9, @guess.guesses_available
   end
 end
